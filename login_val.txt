@@ -1,9 +1,0 @@
-<html>
-<body>
-<p> Data is:</p>
-<?php
-echo "Email =". $_POST["uname"]."<br>";
-echo "Password =". $_POST["psw"]."<br>";
-?>
-</body>
-</html>
