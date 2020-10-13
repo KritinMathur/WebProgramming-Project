@@ -103,6 +103,9 @@ function getChartData(ID_symbol){
 }
 
 function drawChart(response){
+
+
+
 	var obj = response;
 	for (index = 0; index < obj.chart.result[0].timestamp.length; index++) { 
     	var d = new Date(obj.chart.result[0].timestamp[index]*1000);
@@ -146,7 +149,22 @@ function drawChart(response){
 
     // Configuration options go here
     options: {
-
+        scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Time'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Value'
+                        }
+                    }]
+                }
     }
 });
 }
