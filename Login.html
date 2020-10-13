@@ -1,103 +1,146 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Login</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <style>
-      html, body {
-	color: black;
+
+<head>
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <style>
+    html,
+    body {
+      color: black;
       display: flex;
       justify-content: center;
       font-family: Roboto, Arial, sans-serif;
       font-size: 15px;
-      }
-      body {
+    }
+
+    body {
       background: url("https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")no-repeat center;
-	
+
       background-size: cover;
-      }
-      form {
+    }
+
+    form {
       border: 5px solid black;
-      }
-      input[type=text], input[type=password] {
+    }
+
+    input[type=email],
+    input[type=password] {
       width: 100%;
       padding: 16px 8px;
       margin: 8px 0;
       display: inline-block;
       border: 1px solid #ccc;
       box-sizing: border-box;
-      }
-      .btn-item, button {
+    }
+
+    .btn-item,
+    button {
       padding: 15px 0;
       border: none;
-      background: black; 
+      background: black;
       font-size: 15px;
       font-weight: 400;
       color: #fff;
       width: 100%
-      }     
-      .btn-item {
+    }
+
+    .btn-item {
       display: inline-block;
       margin: 15px 0px 0;
-      }
-      button {
+    }
+
+    button {
       width: 100%;
-      }
-      button:hover, .btn-item:hover {
+    }
+
+    button:hover,
+    .btn-item:hover {
       opacity: 0.8;
-      }
-      h1 {
-      text-align:center;
-      fone-size:18;
-      }
-      .formcontainer {
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 18;
+    }
+
+    .formcontainer {
       text-align: left;
       margin: 24px 50px 12px;
-      }
-     .imgcontainer {
-      text-align: center;
-       margin: 24px 0 12px 0;
-      }
+    }
 
-       img.avatar {
-        width: 35%;
-           border-radius: 50%;
-       }
-      .container {
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+    }
+
+    img.avatar {
+      width: 35%;
+      border-radius: 50%;
+    }
+
+    .container {
       padding: 16px 0;
-      text-align:left;
-      }
-      span.psw {
+      text-align: left;
+    }
+
+    span.psw {
       float: right;
       padding-top: 0;
       padding-right: 15px;
-      }
-    </style>
-  </head>
-  <body>
-    <form>
-      <h1>Login to Stock Tracker</h1>
-  <div class="imgcontainer">
-  <img src="asset/logo.png" alt="Avatar" class="avatar">
+    }
+  </style>
+    <script>
 
-  </div>
-      <div class="formcontainer">
-      <hr/>
+      function validation() 
+              {
+                  var x = document.myform.email.value;
+                  var atposition = x.indexOf("@");
+                  var dotposition = x.lastIndexOf(".");
+                  if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+                      alert("Invalid e-mail ID");
+                      return false;
+                  }
+                  
+                  if (document.myform.pass.value.trim() == "" || document.myform.pass.value.trim() == null) {
+                      pass.style.border = "3px solid white";
+                      alert("invalid Password");
+                      return false;
+                  }
+                  
+                  if (document.myform.pass.value.trim().length < 5) {
+                      pass.style.border = "3px solid white";
+                      alert("Password is too short");
+                      return false;
+                  }
+                  
+        </script>
+</head>
+
+<body>
+  <form name="myform" action="Webpage_2.html" onsubmit="return validation();">
+    <h1>Login to Stock Tracker</h1>
+    <div class="imgcontainer">
+      <img src="asset/logo.png" alt="Avatar" class="avatar">
+
+    </div>
+    <div class="formcontainer">
+      <hr />
       <div class="container">
-        <label for="uname"><strong>Email</strong></label>
-        <input type="text" placeholder="Enter Email ID" name="uname" required>
-        <label for="psw"><strong>Password</strong></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <label><strong>Email Id *</strong></label>
+        <input type="email" id="email" placeholder="example@mail.com" required>
+        <label><strong>Password *</strong></label>
+        <input type="password" id="pass" required>
+
+
       </div>
-       <div class="btn-group">
-          <center><a class="btn-item" href="Webpage_2.html">Login</a>
+      <div class="btn-group">
+        <center>
+          <button class="btn-item" type="submit">Login</button>
           <a class="btn-item" href="Webpage_1.html">Go back to Home Page</a></center>
-      <div class="container" style="background-color: #eee">
-        <label style="padding-left: 15px">
-        <input type="checkbox"  checked="checked" name="remember"> Remember me
-        </label>
-        <span class="psw"><a href="Error.html"> Forgot password?</a></span>
-      </div>
-    </form>
-  </body>
+        <div class="container" style="background-color: #eee">
+        </div>
+  </form>
+</body>
+
 </html>
