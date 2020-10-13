@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
-      font-family: Roboto;
-      background-color: rgba(50, 115, 220, 0.2);
+      font-family: sans-serif;
+      background-color: #eeeeee;
     }
 
     * {
@@ -20,26 +20,26 @@
     .bar input[type=text] {
       padding: 10px;
       font-size: 17px;
-      border: 1px solid grey;
+      border: 1px solid black;
       float: left;
       width: 80%;
-      background: #f1f1f1;
+      background: white;
     }
 
     .bar button {
       float: left;
       width: 20%;
       padding: 10px;
-      background: #000000;
+      background: #686d76;
       color: white;
       font-size: 17px;
-      border: 1px solid grey;
+      border: 1px solid black ;
       border-left: none;
       cursor: pointer;
     }
 
     .bar button:hover {
-      background: #5f5f63;
+      background: #373a40;
     }
 
     .table {
@@ -55,26 +55,50 @@
       font-size: 20px;
     }
 
-    .table tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    
-    .table tr:nth-child(odd) {
-      background-color: #f2f2f2;
+    .table tr:nth-child() {
+      background-color: #eeeeee;
     }
 
     .table tr:hover {
-      background-color: #ddd;
+      background-color: #19d3da;
+      color: black;
     }
 
     .table th {
       padding-top: 12px;
       padding-bottom: 12px;
       text-align: left;
-      background-color: black;
-      color: white;
+      background-color: #373a40;
+      color: #eeeeee;
 
     }
+.table button{
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #686d76;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center
+}
+.table button {
+  transition-duration: 0.4s;
+}
+
+.table button:hover {
+  background-color: black;
+}
+.table button:disabled{
+  display: block;
+  width: 50%;
+  border: none;
+  background-color: red;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
 
   </style>
 </head>
