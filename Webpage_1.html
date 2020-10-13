@@ -177,7 +177,7 @@ function validation()
             }
             if (document.myform.pass.value.trim().length < 5) {
                 pass.style.border = "3px solid white";
-                alert("Password is too short");
+                alert("Password is too short Min length is 6");
                 return false;
             }
             var x = document.myform.email.value;
@@ -220,11 +220,11 @@ function validation()
         <h2>Register here</h2>
       </div>
       <div class="info">
-        <input id="fname" placeholder="Fullname *">
-        <input type="password" id="pass" placeholder="Password *">
+        <input id="fname" placeholder="Fullname *" required>
+        <input type="password" id="pass" placeholder="Password *" required>
         <input id="email" placeholder="Email *">
 
-        <input id="phone" placeholder="Phone No">
+        <input id="phone" placeholder="Phone No" required>
 
       </div>
       <center>
