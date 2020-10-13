@@ -1,62 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src='apijs.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src='apijs.js'></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: Roboto;
-}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Roboto;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    .bar input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      float: left;
+      width: 80%;
+      background: #f1f1f1;
+    }
 
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-}
+    .bar button {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      background: #2196F3;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none;
+      cursor: pointer;
+    }
 
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
-}
+    .bar button:hover {
+      background: #0b7dda;
+    }
 
-form.example button:hover {
-  background: #0b7dda;
-}
 
-}
-</style>
+  </style>
 </head>
 
 <body>
-<h2><center>STOCK TRACKER</center></h2>
+<section class="page">
 
-<h3>What are you looking for ?</h3>
-<!-- <form name = "myform" class="example"> -->
-  <input type="text" id = 'searchInp' placeholder="Search.." name="search">
-  <button onclick="autoFill()"><i class="fa fa-search"></i></button>
-<!-- </form> -->
-
-
-<table id = 'table'>
-
-</table>
-
+  <h2>
+    <center>STOCK TRACKER</center>
+  </h2>
+  
+  <h3>What are you looking for ?</h3>
+  <div class="bar">
+    
+    <input type="text" id='searchInp' placeholder="Search.." name="search">
+    <button onclick="autoFill()"><i class="fa fa-search"></i></button>
+    
+  </div>
+  
+  
+  <table id='table'>
+    
+  </table>
+  
+</section>
 </body>
-</html> 
+
+</html>
