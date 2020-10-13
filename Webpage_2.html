@@ -2,6 +2,9 @@
 <html>
 <head>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src='apijs.js'></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
@@ -32,6 +35,7 @@ form.example button {
   border-left: none;
   cursor: pointer;
 }
+
 form.example button:hover {
   background: #0b7dda;
 }
@@ -44,10 +48,15 @@ form.example button:hover {
 <h2><center>STOCK TRACKER</center></h2>
 
 <h3>What are you looking for ?</h3>
-<form class="example">
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
+<!-- <form name = "myform" class="example"> -->
+  <input type="text" id = 'searchInp' placeholder="Search.." name="search">
+  <button onclick="autoFill()"><i class="fa fa-search"></i></button>
+<!-- </form> -->
+
+
+<table id = 'table'>
+
+</table>
 
 </body>
 </html> 
