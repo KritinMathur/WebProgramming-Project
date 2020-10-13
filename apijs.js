@@ -104,7 +104,8 @@ function getChartData(ID_symbol){
 
 function drawChart(response){
 
-
+    $('#myChart').remove();
+    $('#graph-container').append('<canvas id="myChart"><canvas>');
 
 	var obj = response;
 	for (index = 0; index < obj.chart.result[0].timestamp.length; index++) { 
@@ -154,14 +155,14 @@ function drawChart(response){
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Time'
+                            labelString: 'Time(IST)'
                         }
                     }],
                     yAxes: [{
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Value'
+                            labelString: 'Value in ' + obj.chart.result[0].meta.currency
                         }
                     }]
                 }
