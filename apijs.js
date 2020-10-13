@@ -96,6 +96,57 @@ function getChartData(ID_symbol){
 	}
 
 	$.ajax(settings).done(function (response) {
-		console.log(response);
+		//console.log(response);
+		drawChart(response);
+
 	});
+}
+
+function drawChart(response){
+	var obj = response;
+	for (index = 0; index < obj.chart.result[0].timestamp.length; index++) { 
+    	var d = new Date(obj.chart.result[0].timestamp[index]*1000);
+    	obj.chart.result[0].timestamp[index] = d.getHours()+":"+d.getMinutes();
+	} 
+
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: obj.chart.result[0].timestamp,
+        datasets: [{
+            label: 'OPEN',
+            backgroundColor: '#ADD8E6',
+            borderColor: '#ADD8E6',
+            data: obj.chart.result[0].indicators.quote[0].open ,
+            fill: false
+        },{
+            label: 'CLOSE',
+            backgroundColor: '#3c3c3c',
+            borderColor: '#3c3c3c',
+            data: obj.chart.result[0].indicators.quote[0].close,
+            fill: false
+        },{
+            label: 'HIGH',
+            backgroundColor: '#7CFC00',
+            borderColor: '#7CFC00',
+            data: obj.chart.result[0].indicators.quote[0].high,
+            fill: false
+        },{
+            label: 'LOW',
+            backgroundColor: '#ff6347',
+            borderColor: '#ff6347',
+            data: obj.chart.result[0].indicators.quote[0].low,
+            fill: false
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+
+    }
+});
 }
