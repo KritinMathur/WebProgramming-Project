@@ -1,152 +1,240 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Stocks registration form</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-<style>
-      html, body {
+
+<head>
+  <title>Stocks registration form</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <style>
+    html,
+    body {
       min-height: 100%;
-      }
-      body, div, form, input, select, p { 
+    }
+
+    body,
+    div,
+    form,
+    input,
+    select,
+    p {
       padding: 0;
       margin: 0;
       outline: none;
       font-family: Roboto, Arial, sans-serif;
       font-size: 16px;
       color: #eee;
-      }
-      body {
+    }
+
+    body {
       background: url("https://ak.picdn.net/shutterstock/videos/4518221/thumb/1.jpg")no-repeat center;
       background-size: cover;
-      }
-      h1, h2 {
+    }
+
+    h1,
+    h2 {
       text-transform: uppercase;
       font-weight: 400;
-      }
-      h2 {
+    }
+
+    h2 {
       margin: 0 0 0 8px;
-      }
-      .main-block {
+    }
+
+    .main-block {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100%;
       padding: 25px;
-      background: rgba(0, 0, 0, 0.5); 
-      }
-      .left-part, form {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .left-part,
+    form {
       padding: 25px;
-      }
-      .left-part {
+    }
+
+    .left-part {
       text-align: center;
-      }
-      .fa-chart-line {
+    }
+
+    .fa-chart-line {
       font-size: 72px;
-      }
-      form {
-      background: rgba(0, 0, 0, 0.7); 
-      }
-      .title {
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .title {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
-      }
-      .info {
+    }
+
+    .info {
       display: flex;
       flex-direction: column;
-      }
-      input, select {
+    }
+
+    input,
+    select {
       padding: 5px;
       margin-bottom: 30px;
       background: transparent;
       border: none;
       border-bottom: 1px solid #eee;
-      }
-      input::placeholder {
+    }
+
+    input::placeholder {
       color: #eee;
-      }
-      option:focus {
+    }
+
+    option:focus {
       border: none;
-      }
-      option {
-      background: black; 
+    }
+
+    option {
+      background: black;
       border: none;
-      }
-      .checkbox input {
+    }
+
+    .checkbox input {
       margin: 0 10px 0 0;
       vertical-align: middle;
-      }
-      .checkbox a {
+    }
+
+    .checkbox a {
       color: #26a9e0;
-      }
-      .checkbox a:hover {
+    }
+
+    .checkbox a:hover {
       color: #85d6de;
-      }
-      .btn-item, button {
+    }
+
+    .btn-item,
+    button {
       padding: 10px 5px;
       margin-top: 20px;
-      border-radius: 5px; 
+      border-radius: 5px;
       border: none;
-      background: #26a9e0; 
+      background: #26a9e0;
       text-decoration: none;
       font-size: 15px;
       font-weight: 400;
       color: #fff;
-      }
-      .btn-item {
+    }
+
+    .btn-item {
       display: inline-block;
       margin: 20px 5px 0;
-      }
-      button {
+    }
+
+    button {
       width: 100%;
-      }
-      button:hover, .btn-item:hover {
+    }
+
+    button:hover,
+    .btn-item:hover {
       background: #85d6de;
+    }
+
+    @media (min-width: 568px) {
+
+      html,
+      body {
+        height: 100%;
       }
-      @media (min-width: 568px) {
-      html, body {
-      height: 100%;
-      }
+
       .main-block {
-      flex-direction: row;
-      height: calc(100% - 50px);
+        flex-direction: row;
+        height: calc(100% - 50px);
       }
-      .left-part, form {
-      flex: 1;
-      height: auto;
+
+      .left-part,
+      form {
+        flex: 1;
+        height: auto;
       }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main-block">
-      <div class="left-part">
-        <i class="fas fa-chart-line"></i>
-        <h1>Stock Tracker</h1>
-        <p>We provide free information about your Stocks. Just register or Login In to know all about Stocks.</p>
-        <div class="btn-group">
-          <a class="btn-item" href="About_Us.html">About Us</a>
-        </div>
+    }
+  </style>
+  <script>
+
+function validation() 
+        {
+            if (document.myform.fname.value.trim() == "" || document.myform.fname.value.trim() == null) {
+                fname.style.border = "3px solid white";
+                alert("please insert Fullname");
+                return false;
+            }
+            
+            if (document.myform.pass.value.trim() == "" || document.myform.pass.value.trim() == null) {
+                pass.style.border = "3px solid white";
+                alert("please insert Password");
+                return false;
+            }
+            if (document.myform.pass.value.trim().length < 5) {
+                pass.style.border = "3px solid white";
+                alert("Entered Password is very short");
+                return false;
+            }
+            var x = document.myform.email.value;
+            var atposition = x.indexOf("@");
+            var dotposition = x.lastIndexOf(".");
+            if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+                alert("Invalid e-mail ID");
+                return false;
+            }
+            
+            var y = document.myform.phone.value;
+            if (isNaN(y)) {
+                alert("Enter Numeric value only");
+                return false;
+
+            }
+
+            var z = document.myform.fname.value;
+            if (!isNaN(z)) {
+                alert("Enter Text format only");
+                return false;}
+            }
+  </script>
+</head>
+
+<body>
+  <div class="main-block">
+    <div class="left-part">
+      <i class="fas fa-chart-line"></i>
+      <h1>Stock Tracker</h1>
+      <p>We provide free information about your Stocks. Just register or Login In to know all about Stocks.</p>
+      <div class="btn-group">
+        <a class="btn-item" href="About_Us.html">About Us</a>
       </div>
-      <form action="/">
-        <div class="title">
-          <i class="fas fa-pencil-alt"></i> 
-          <h2>Register here</h2>
-        </div>
-        <div class="info">
-          <input class="fname" type="text" name="name" placeholder="Full name">
-          <input type="email" name="email" placeholder="Email">
-          <input type="number" name="number" placeholder="Phone number">
-          <input type="password" name="pass" placeholder="Password">
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkbox"><span>I agree to the Privacy Policy for Stock Tracker</span>
-        </div>
-        <center><a class="btn-item" href="Login.html">Submit</a>
-        <a class="btn-item" href="Login.html">Already Registered / Login</a></center>
-      </form>
     </div>
-  </body>
+
+    <form name="myform" action="Login.html" onsubmit="return validation();">
+      <div class="title">
+        <i class="fas fa-pencil-alt"></i>
+        <h2>Register here</h2>
+      </div>
+      <div class="info">
+        <label for="fname"></label>
+        <input id="fname" placeholder="Fullname *">
+        <label for="pass"></label>
+        <input type="password" id="pass" placeholder="Password *">
+        <label for="email"></label>
+        <input id="email" placeholder="Email *">
+        <label for="phone"></label>
+        <input id="phone" placeholder="Phone No">
+
+      </div>
+      <center>
+        <button class="btn-item" type="submit">Submit Now</button>
+        <a class="btn-item" href="Login.html">Already Registered / Login</a></center>
+    </form>
+  </div>
+</body>
+
 </html>
