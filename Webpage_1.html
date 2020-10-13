@@ -166,18 +166,18 @@ function validation()
         {
             if (document.myform.fname.value.trim() == "" || document.myform.fname.value.trim() == null) {
                 fname.style.border = "3px solid white";
-                alert("please insert Fullname");
+                alert("Invalid Fullname");
                 return false;
             }
             
             if (document.myform.pass.value.trim() == "" || document.myform.pass.value.trim() == null) {
                 pass.style.border = "3px solid white";
-                alert("please insert Password");
+                alert("invalid Password");
                 return false;
             }
             if (document.myform.pass.value.trim().length < 5) {
                 pass.style.border = "3px solid white";
-                alert("Entered Password is very short");
+                alert("Password is too short");
                 return false;
             }
             var x = document.myform.email.value;
@@ -220,13 +220,10 @@ function validation()
         <h2>Register here</h2>
       </div>
       <div class="info">
-        <label for="fname"></label>
         <input id="fname" placeholder="Fullname *">
-        <label for="pass"></label>
         <input type="password" id="pass" placeholder="Password *">
-        <label for="email"></label>
         <input id="email" placeholder="Email *">
-        <label for="phone"></label>
+
         <input id="phone" placeholder="Phone No">
 
       </div>
